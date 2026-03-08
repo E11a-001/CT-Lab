@@ -11,7 +11,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-app.use(cors());
+app.use(cors({ origin: '*', methods: ['POST'], allowedHeaders: ['Content-Type'] }));
 app.use(express.json());
 
 app.post('/api/analyze', async (req, res) => {
