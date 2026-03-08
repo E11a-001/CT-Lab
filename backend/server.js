@@ -13,7 +13,7 @@ const openai = new OpenAI({
 
 app.use(cors({ origin: '*', methods: ['POST'], allowedHeaders: ['Content-Type'] }));
 app.use(express.json());
-
+app.use(express.static('public'));
 app.post('/api/analyze', async (req, res) => {
   try {
     const { text, type } = req.body;
