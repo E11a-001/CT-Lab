@@ -1,13 +1,6 @@
 {
-  "functions": {
-    "server.js": {
-      "runtime": "@vercel/node@3"
-    }
-  },
   "rewrites": [
-    {
-      "source": "/.netlify/functions/server/:path*",
-      "destination": "/server.js/:path*"
-    }
+    { "source": "/(.*)", "destination": "/public/index.html" },
+    { "source": "/api/analyze", "destination": "/api/analyze.js" }
   ]
 }
